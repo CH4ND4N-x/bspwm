@@ -51,9 +51,9 @@ font-0 = font DejaVu Sans Mono Book:pixelsize=12;2
 font-1 = "Iosevka Nerd Font:pixelsize=16;3"
 font-2 = "Iosevka Nerd Font:style=Medium:size=16;3"
 
-modules-left = bspwm cpu memory xwindow
+modules-left = bspwm cpu memory temperature xwindow
 modules-center = previous info next   
-modules-right = uptime pulseaudio eth date powermenu
+modules-right = uptime backlight-acpi pulseaudio wlan battery date powermenu
 
 ;tray-position = right
 ;tray-padding = 2

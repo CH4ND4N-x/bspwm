@@ -1,11 +1,13 @@
 #! /bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
-picom -f &
-nitrogen --restore &
-~/.config/polybar/launch.sh
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+###################
+#Settings         #
+###################
+
+bspc monitor -d I II III IV V VI VII 
+#VIII IX X
 
 bspc config border_width         2
 bspc config window_gap          12
@@ -13,9 +15,33 @@ bspc config window_gap          12
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config focus_follows_pointer true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+#### Dracula theme ####
+bspc config normal_border_color "#44475a"
+bspc config active_border_color "#bd93f9"
+bspc config focused_border_color "#ff79c6"
+bspc config presel_feedback_color "#6272a4"
+
+
+########################
+#   RULES              #
+########################
+bspc rule -a Brave-browser desktop='^2'		# brave to desktop 2
+bspc rule -a Code desktop='^6'			# vcode to desktop 6     
+bspc rule -a jetbrains-studio desktop='^7'	# android studio to desktop 7
+bspc rule -a "*Emulator.*" state=floating	# android emulator floating
+bspc rule -a "xdman-Main" " " state=floating	# Xdman download box floating 
+bspc rule -a "Figure*" state=floating		# Gnu Octave output floating
+
+#######################
+# autostart and load  #
+#######################
+
+picom -f &
+
+nitrogen --restore &
+
+~/.config/polybar/launch.sh &
+
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 

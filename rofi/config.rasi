@@ -20,7 +20,7 @@ window {
     background-color: @background;
     border:           2;
     border-radius: 6;
-    border-color: #f5f5f5ff;
+    border-color: #f5f5f5;
     padding:  14;
 }
 #mainbox {
